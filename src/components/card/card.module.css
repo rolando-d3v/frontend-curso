@@ -1,0 +1,31 @@
+.card {
+  background: #fff;
+  border-radius: 12px;
+
+  .titulo {
+    color: #000;
+  }
+
+  .descripcion {
+    color: #424242;
+  }
+
+  .precio {
+    color: #000000;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .boton {
+    background: #34495e;
+    color: #fff;
+    border-radius: 12px;
+    padding: 10px;
+    cursor: pointer;
+  }
+}
+
+.imagen_card {
+  width: 300px;
+  border-radius: 12px;
+}
