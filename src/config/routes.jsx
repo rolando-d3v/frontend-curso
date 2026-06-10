@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router";
 import Login from "../modules/auth/pages/login/Login";
 import { PublicRoute, PrivateRoute } from "./ConfigRoutes";
 import Mainlayout from "../layout/main_layout/Mainlayout";
+import Homepage from "../modules/home/page/home/Homepage";
+import ProfilePage from "../modules/home/page/profile/layout_profile/ProfilePage";
 
 const PruebaPage = ({ title }) => (
   <div style={{ padding: "2rem" }}>
@@ -33,7 +35,11 @@ export const router = createBrowserRouter([
         children: [
           {
             path: "/home",
-            element: <PruebaPage title="Inicio Home" />,
+            element: <Homepage />,
+          },
+          {
+            path: "/profile",
+            element: <ProfilePage />,
           },
         ],
       },

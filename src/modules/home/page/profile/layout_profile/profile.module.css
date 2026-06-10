@@ -1,0 +1,210 @@
+.page {
+  height: calc(100vh - 80px);
+  background: #2d96ea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.card {
+  width: 1200px;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+.content {
+  display: flex;
+}
+
+.sidebar {
+  width: 320px;
+  border-right: 1px solid #ececec;
+  padding: 35px;
+}
+
+.profileImage {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.section {
+  margin-top: 30px;
+}
+
+.section h4 {
+  color: #999;
+  font-size: 12px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.company {
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.company p {
+  margin: 4px 0;
+  color: #777;
+  font-size: 13px;
+}
+
+.badge,
+.badgeSecondary {
+  padding: 5px 10px;
+  border-radius: 20px;
+  height: fit-content;
+  font-size: 11px;
+}
+
+.badge {
+  background: #e9f4ff;
+  color: #2d96ea;
+}
+
+.badgeSecondary {
+  background: #eef6ff;
+  color: #4f84d9;
+}
+
+.skills {
+  list-style: none;
+  padding: 0;
+}
+
+.skills li {
+  margin-bottom: 8px;
+  color: #666;
+}
+
+.main {
+  flex: 1;
+  padding: 35px;
+}
+
+.profileHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.profileHeader h1 {
+  margin: 0;
+  color: #333;
+}
+
+.job {
+  color: #2d96ea;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.rating {
+  margin-top: 15px;
+  color: #2d96ea;
+}
+
+.score {
+  font-size: 32px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.bookmark {
+  border: none;
+  background: transparent;
+  color: #999;
+  cursor: pointer;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.messageBtn,
+.contactBtn,
+.reportBtn {
+  padding: 12px 22px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+}
+
+.messageBtn {
+  background: #f4f4f4;
+}
+
+.contactBtn {
+  background: #2d96ea;
+  color: white;
+}
+
+.reportBtn {
+  background: transparent;
+  color: #777;
+}
+
+.tabs {
+  display: flex;
+  gap: 30px;
+  border-bottom: 1px solid #ececec;
+  margin-top: 30px;
+}
+
+.tabs button {
+  background: transparent;
+  border: none;
+  padding: 15px 0;
+  color: #777;
+  cursor: pointer;
+}
+
+.activeTab {
+  color: #2d96ea !important;
+  border-bottom: 2px solid #2d96ea !important;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 35px;
+}
+
+.infoGrid h5 {
+  color: #999;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+.infoRow {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 18px;
+}
+
+.infoRow span {
+  min-width: 90px;
+  color: #777;
+  font-weight: 600;
+}
+
+.infoRow p {
+  margin: 0;
+  color: #555;
+}
+
+.infoRow a {
+  color: #2d96ea;
+  text-decoration: none;
+}

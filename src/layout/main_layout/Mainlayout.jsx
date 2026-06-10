@@ -1,15 +1,13 @@
 import React from "react";
+import { Outlet } from "react-router";
+import Navigation from "../navigation/Navigation";
 
 function Mainlayout() {
   return (
     <div>
-      <aside>
-        <h5>este es sidebar</h5>
-      </aside>
+      <Navigation />
 
-      <main>
-        <h5>este es main</h5>
-      </main>
+      <Outlet />
     </div>
   );
 }
