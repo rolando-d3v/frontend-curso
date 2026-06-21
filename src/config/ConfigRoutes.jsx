@@ -29,9 +29,9 @@ export const PrivateRoute = ({ allowedRoles }) => {
 
   
   //que role tiene el usuario
-  const roleId = roles.map((role) => role.role_id);
-  if (allowedRoles && allowedRoles.length > 0) {
-    const hasPermission = allowedRoles.some((role) => roleId.includes(role));
+  const roleId = roles?.map((role) => role.role_id);
+  if (allowedRoles && allowedRoles?.length > 0) {
+    const hasPermission = allowedRoles?.some((role) => roleId?.includes(role));
     if (!hasPermission) {
       return <Navigate to="/no-autorizado" replace />;
     }

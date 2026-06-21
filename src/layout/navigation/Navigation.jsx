@@ -1,6 +1,26 @@
+import { useDispatch } from "react-redux";
+import { authLogoutServices } from "../../modules/auth/services/auth";
+import { set_logout } from "../../redux/slice/authSlice";
 import styles from "./navigation.module.css";
+import { useNavigate } from "react-router";
 
 export default function Navigation() {
+  const navigate = useNavigate();
+
+  const dispatch = useDispatch();
+
+  const handleLogout = async () => {
+    try {
+      await authLogoutServices();
+
+      dispatch(set_logout());
+
+      navigate("/login");
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
@@ -20,6 +40,10 @@ export default function Navigation() {
           alt="avatar"
           className={styles.avatar}
         />
+
+        <button onClick={handleLogout} className={styles.logoutButton}>
+          Cerrar Sesión
+        </button>
       </nav>
     </header>
   );
