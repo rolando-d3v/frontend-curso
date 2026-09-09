@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, Navigate } from "react-router";
 import Login from "../modules/auth/pages/login/Login";
 import { PublicRoute, PrivateRoute } from "./ConfigRoutes";
 import Mainlayout from "../layout/main_layout/Mainlayout";
@@ -15,6 +15,11 @@ const PruebaPage = ({ title }) => (
 );
 
 export const router = createBrowserRouter([
+  // Redirección inicial: si entra a la raíz "/" va a "/home" (PrivateRoute lo enviará a /login si no está autenticado)
+  {
+    path: "/",
+    element: <Navigate to="/home" replace />,
+  },
   {
     element: <PublicRoute />,
     children: [
@@ -56,6 +61,10 @@ export const router = createBrowserRouter([
         element: <PruebaPage title="Panel de control administrador" />,
       },
     ],
+  },
+  {
+    path: "/no-autorizado",
+    element: <PruebaPage title="Acceso no autorizado (403)" />,
   },
   {
     path: "*",

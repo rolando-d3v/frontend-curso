@@ -20,15 +20,14 @@ export const PublicRoute = () => {
 
 // ruta privada
 export const PrivateRoute = ({ allowedRoles }) => {
-  const { isAuthenticated, roles } = useSelector((state) => state.authSlice);
+  const { isAuthenticated, user, roles } = useSelector((state) => state.authSlice);
 
-  //si tiene token
-  if (!isAuthenticated) {
+  // Si no cuenta con autenticación ni usuario activo, redirigir a /login
+  if (!isAuthenticated || !user) {
     return <Navigate to="/login" replace />;
   }
 
-  
-  //que role tiene el usuario
+  // Qué rol tiene el usuario
   const roleId = roles?.map((role) => role.role_id);
   if (allowedRoles && allowedRoles?.length > 0) {
     const hasPermission = allowedRoles?.some((role) => roleId?.includes(role));

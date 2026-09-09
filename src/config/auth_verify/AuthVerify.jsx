@@ -30,8 +30,10 @@ export const AuthVerify = ({ children }) => {
       try {
         const data = await authVerifyServices();
 
-        if (data && data?.status !== 401) {
+        if (data && data.user) {
           dispatch(set_login(data));
+        } else {
+          dispatch(set_logout());
         }
       } catch (error) {
         console.error("Error verificando sesión:", error);

@@ -11,21 +11,31 @@ export default function Login() {
 
 
 
-   const dispatch = useDispatch();
+   const [errorMsg, setErrorMsg] = useState("");
 
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const enviarLogin = async (e) => {
     e.preventDefault();
+    setErrorMsg("");
     const data = {
       email,
       password,
     };
 
     const response = await loginServices(data);
-    dispatch(set_login(response));
-    navigate("/home", { replace: true });
-    console.log(response);
+
+    if (response && response.user) {
+      dispatch(set_login(response));
+      navigate("/home", { replace: true });
+    } else {
+      const msg =
+        response?.response?.data?.message ||
+        response?.response?.data?.msj ||
+        "Credenciales inválidas o no tiene una cuenta registrada.";
+      setErrorMsg(msg);
+    }
   };
 
   return (
@@ -37,6 +47,11 @@ export default function Login() {
         </div>
 
         <form onSubmit={enviarLogin} className={styles.form}>
+          {errorMsg && (
+            <p style={{ color: "#f87171", fontSize: "0.9rem", margin: "0", textAlign: "center" }}>
+              {errorMsg}
+            </p>
+          )}
           <div className={styles.formGroup}>
             <label>Correo Electrónico</label>
             <input

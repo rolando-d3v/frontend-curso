@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { authLogoutServices } from "../../modules/auth/services/auth";
 import { set_logout } from "../../redux/slice/authSlice";
 import styles from "./navigation.module.css";
-import { useNavigate } from "react-router";
+import { useNavigate, Link } from "react-router";
 
 export default function Navigation() {
   const navigate = useNavigate();
@@ -31,9 +31,9 @@ export default function Navigation() {
       <input type="text" placeholder="Search" className={styles.search} />
 
       <nav className={styles.nav}>
-        <a href="/">Buscar</a>
-        <a href="/">Personas</a>
-        <a href="/">Contactos</a>
+        <Link to="/home">Home</Link>
+        <Link to="/personas">Personas</Link>
+        <Link to="/contactos">Contactos</Link>
 
         <img
           src="https://img.freepik.com/vector-premium/imagen-perfil-avatar-hombre-aislada-fondo-imagen-profil-avatar-hombre_1293239-4861.jpg?semt=ais_hybrid&w=740&q=80"
